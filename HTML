@@ -4,27 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Agrinho - Sustentabilidade no Campo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* RESET DE ESTILOS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* IMAGEM DE FUNDO EM TELA CHEIA */
+        .bg-background {
+            /* Substitua a URL abaixo pela imagem de campo agrícola que desejar */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* CARD CENTRALIZADO */
+        .content-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-top: 8px solid #2e7d32; /* Detalhe em verde agrícola */
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        /* BOTÃO INTERATIVO (JAVASCRIPT) */
+        .btn-action {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-action:hover {
+            background-color: #1b5e20;
+        }
+
+        /* MENSAGEM OCULTA DO JAVASCRIPT */
+        .hidden-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            border-radius: 4px;
+            display: none; /* Começa escondida */
+            font-weight: 500;
+            color: #1b5e20;
+        }
+    </style>
 </head>
 <body>
 
-    <main class="content-container">
-        <header>
-            <h1 class="title">Projeto Agrinho</h1>
-            <p class="subtitle">Inovação e Educação para o Meio Rural</p>
-        </header>
+    <div class="bg-background">
         
-        <section class="text-section">
+        <main class="content-card">
+            <h1>Projeto Agrinho</h1>
             <p>
-                O Projeto Agrinho convida estudantes e professores a pensarem no futuro do nosso planeta. 
-                Unindo a educação básica às práticas de sustentabilidade e tecnologia no campo, o projeto 
-                transforma a realidade de milhares de jovens, mostrando que a agricultura e a preservação 
-                ambiental caminham lado a lado.
+                O Projeto Agrinho leva conhecimento, cidadania e consciência ambiental para as escolas. 
+                Ao conectar a educação com a realidade do campo, ele inspira crianças e jovens a construírem 
+                um futuro mais sustentável, valorizando a agricultura e o cuidado com o nosso planeta.
             </p>
-            <button id="btn-interativo" class="btn">Saiba Mais</button>
-        </section>
-    </main>
+            
+            <button class="btn-action" id="btnInteragir">Saber Mais</button>
+            <div class="hidden-message" id="mensagemInfo">
+                🌱 Cultivando saber, colhendo futuro! O Agrinho transforma a educação básica unindo o campo e a cidade.
+            </div>
+        </main>
 
-    <script src="script.js"></script>
+    </div>
+
+    <script>
+        // Seleciona os elementos do HTML
+        const botao = document.getElementById('btnInteragir');
+        const mensagem = document.getElementById('mensagemInfo');
+
+        // Adiciona o evento de clique ao botão
+        botao.addEventListener('click', () => {
+            // Verifica se a mensagem está escondida ou visível e alterna
+            if (mensagem.style.display === 'none' || mensagem.style.display === '') {
+                mensagem.style.display = 'block';
+                botao.textContent = 'Fechar';
+            } else {
+                mensagem.style.display = 'none';
+                botao.textContent = 'Saber Mais';
+            }
+        });
+    </script>
 </body>
 </html>
