@@ -1,0 +1,88 @@
+/* RESET DE CSS: Remove margens padrão e evita bugs de tamanho */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página com a imagem de fundo cheia */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    padding: 20px;
+    
+    /* Configuração da imagem de fundo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+}
+
+/* Caixa centralizada de conteúdo */
+.content-container {
+    background-color: rgba(255, 255, 255, 0.92); /* Fundo branco semi-transparente para dar leitura */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 600px; /* Largura máxima em telas grandes */
+    width: 100%;      /* Ocupa tudo se a tela for menor que 600px */
+    text-align: center;
+    border-top: 8px solid #2e7d32; /* Detalhe em verde Agrinho */
+}
+
+/* Tipografia Responsiva */
+.title {
+    color: #2e7d32;
+    font-size: 2.5rem; /* Se adapta melhor que pixels */
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #558b2f;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.text-section p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Botão Estilizado */
+.btn {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+}
+
+/* MEDIA QUERIES: Ajustes finos para telas muito pequenas (Celulares) */
+@media (max-width: 480px) {
+    .content-container {
+        padding: 25px 20px;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .text-section p {
+        font-size: 1rem;
+    }
+}
