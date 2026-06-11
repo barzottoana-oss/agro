@@ -1,0 +1,7 @@
+// Seleciona o botão pelo ID
+const botao = document.getElementById('btn-interativo');
+
+// Adiciona o evento de clique
+botao.addEventListener('click', () => {
+    alert('Obrigado por se interessar pelo Projeto Agrinho! Juntos podemos construir um futuro mais sustentável para o nosso campo e para a nossa cidade. 🌱');
+});
